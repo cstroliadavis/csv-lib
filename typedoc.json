@@ -1,0 +1,10 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "cleanOutputDir": true,
+  "entryPoints": ["./index.ts"],
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "name": "csv-lib",
+  "out": "./docs",
+  "readme": "./README.md"
+}
