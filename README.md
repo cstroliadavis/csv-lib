@@ -1,10 +1,18 @@
 # csv-lib
 
-A lightweight, zero-dependency CSV library built for **Bun (v1.4.2)**.
+A lightweight, zero-dependency CSV library built for **Bun (v1.4.4+)**.
 
 Handles RFC 4180-compliant parsing and writing, including multiline cells with
 newlines, embedded double quotes (`""`), custom delimiters, UTF-8 BOM, and
 chunk-by-chunk file streaming via native Web Streams.
+
+## Documentation
+
+| Resource                                         | Description                                                                                   |
+| :----------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| [Developer Guide](./docs/README.md)              | Deep-dive guides covering parsing, headers, stringifying, Web Streams, file I/O, and recipes. |
+| [Hands-On Tutorial](./docs/tutorial/README.md)   | Progressive 10-lesson course from first parse to building a streaming ETL pipeline.           |
+| [API Reference](./docs/api-reference/index.html) | Full TypeDoc HTML reference generated from JSDoc contracts (`bun run docs`).                  |
 
 ## Features
 
@@ -166,10 +174,10 @@ The resulting `dist/` directory contains:
 
 ## Developer Documentation
 
-Generate interactive HTML documentation from JSDoc comments via TypeDoc:
+Generate interactive HTML API documentation from JSDoc comments via TypeDoc:
 
 ```bash
-# Generate HTML documentation into docs/
+# Generate HTML API reference into docs/api-reference/
 bun run docs
 
 # Watch mode for documentation development
@@ -178,24 +186,25 @@ bun run docs:watch
 
 ## Testing, Linting & Formatting
 
-Run tests, code style verification, and TypeScript typechecking:
+All formatting, linting, typechecking, and test settings are consolidated in
+`bunfig.toml`:
 
 ```bash
 # Run tests with Bun's native test runner
 bun run test
 
-# Run ESLint check
+# Run Bun's native linter (bun lint)
 bun run lint
 
-# Automatically fix ESLint errors
+# Automatically fix lint errors (bun lint --fix)
 bun run lint:fix
 
-# Format files using Prettier
+# Format code and Markdown files using Bun's native formatter (bun fmt)
 bun run format
 
-# Format files using oxfmt
-bun run oxfmt
+# Verify formatting without modifying files (bun fmt --check)
+bun run format:check
 
-# TypeScript strict type checking
+# Run Bun's native TypeScript type checker (bun check)
 bun run typecheck
 ```
