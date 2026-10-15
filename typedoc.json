@@ -5,6 +5,9 @@
   "excludeInternal": true,
   "excludePrivate": true,
   "name": "csv-lib",
-  "out": "./docs",
-  "readme": "./README.md"
+  "out": "./docs/api-reference",
+  "readme": "./README.md",
+  "validation": {
+    "invalidPath": false
+  }
 }

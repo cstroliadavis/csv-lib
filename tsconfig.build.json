@@ -8,5 +8,5 @@
     "rootDir": "."
   },
   "include": ["index.ts", "src/**/*.ts"],
-  "exclude": ["tests/**/*", "eslint.config.js", "dist"]
+  "exclude": ["tests/**/*", "rules/**/*", "dist"]
 }

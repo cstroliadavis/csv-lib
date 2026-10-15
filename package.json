@@ -24,26 +24,22 @@
     "build:types": "tsc -p tsconfig.build.json",
     "docs": "typedoc",
     "docs:watch": "typedoc --watch",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "oxfmt": "oxfmt",
-    "oxfmt:check": "oxfmt --check",
+    "format": "bun fmt",
+    "format:check": "bun fmt --check",
+    "lint": "bun lint",
+    "lint:fix": "bun lint --fix",
     "prepublishOnly": "bun run build && bun test",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch",
+    "typecheck": "bun check"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/bun": "latest",
     "eslint": "^10.11.0",
-    "eslint-config-prettier": "^10.1.8",
-    "oxfmt": "^0.71.0",
-    "prettier": "^3.9.9",
+    "eslint-plugin-jsdoc": "^62.9.0",
     "typedoc": "^0.28.20",
-    "typescript": "5.8.2",
-    "typescript-eslint": "^8.71.0"
+    "typescript": "^5.9.3"
   }
 }

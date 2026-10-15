@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'bun:test';
 import { createCsvStringifier, stringifyCsv, stringifyCsvStream } from '../src/stringifier.ts';
+import type { CsvStringifierOptions } from '../src/types.ts';
 
 describe('CSV Stringifier', () => {
-  const setup = () => {
-    const stringifier = createCsvStringifier({ lineBreak: '\n' });
+  const setup = (options: CsvStringifierOptions = { lineBreak: '\n' }) => {
+    const stringifier = createCsvStringifier(options);
 
     return Object.freeze({
       stringifier,
@@ -78,9 +79,8 @@ describe('CSV Stringifier', () => {
   });
 
   it('quotes all fields when quoted option is enabled', () => {
-    setup();
-    const forcedQuoting = createCsvStringifier({ lineBreak: '\n', quoted: true });
-    const csv = forcedQuoting.stringifyRows([
+    const { stringifier } = setup({ lineBreak: '\n', quoted: true });
+    const csv = stringifier.stringifyRows([
       ['Alice', '30'],
       ['Bob', '25'],
     ]);
